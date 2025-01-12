@@ -9,7 +9,7 @@ export const Header = ({
   handleSelectCity,
 }) => {
   return (
-    <header className="h-[5rem] flex flex-row justify-between items-center px-8">
+    <header className="h-[5rem] flex flex-col lg:flex-row justify-between items-center px-8 [&>div]:basis-1/3">
       <div className="first flex flex-row gap-4 items-center basis-1/4">
         <figure>
           <img src={weather} alt="Weather" className="size-[4rem]" />
@@ -22,7 +22,7 @@ export const Header = ({
             <input
               id="input-search"
               type="text"
-              className="input-search pl-4 py-2 outline-none bg-[var(--secondary-bg)] transition-all w-[100%] w-[22rem]"
+              className="input-search pl-4 py-2 outline-none bg-[var(--secondary-bg)] transition-all w-[100%] w-[90%] lg:w-[22rem]"
               placeholder="Buscar ciudad..."
               onChange={handleChange}
               vavlue={value}
@@ -66,9 +66,7 @@ export const Header = ({
           )}
         </div>
       </div>
-      <div className="third basis-1/4 text-end">
-        <span>Desarrollado por Facudev</span>
-      </div>
+      <div className="hidden lg:block"></div>
     </header>
   );
 };

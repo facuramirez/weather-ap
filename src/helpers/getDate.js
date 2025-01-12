@@ -3,29 +3,29 @@ export const obtenerFechaFormateada = () => {
 
   // Array con los nombres de los días de la semana
   const diasSemana = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sábado",
   ];
 
   // Array con los nombres abreviados de los meses
   const meses = [
-    "Jan",
+    "Ene",
     "Feb",
     "Mar",
-    "Apr",
+    "Abr",
     "May",
     "Jun",
     "Jul",
-    "Aug",
+    "Ago",
     "Sep",
     "Oct",
     "Nov",
-    "Dec",
+    "Dic",
   ];
 
   // Obtén el día de la semana, el día del mes y el mes

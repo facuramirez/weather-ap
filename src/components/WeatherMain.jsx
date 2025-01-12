@@ -26,9 +26,9 @@ export const WeatherMain = ({ selectCity }) => {
   if (!temp) return <Loader />;
 
   return (
-    <main className="main w-[min(120rem,100%)] mx-auto mt-2">
-      <div className="main-container flex flex-row p-8 gap-8">
-        <section className="first flex flex-col gap-8 [&>div]:grow w-[min(29rem,100%)]">
+    <main className="main w-[100%] md:w-[min(40rem,100%)] xl:w-[min(120rem,100%)] mx-auto mt-2">
+      <div className="main-container flex flex-col xl:flex-row p-8 gap-8">
+        <section className="first flex flex-col gap-8 [&>div]:grow xl:w-[min(29rem,100%)]">
           <WeatherNowCard
             temp={temp}
             weather={weather}
@@ -38,6 +38,9 @@ export const WeatherMain = ({ selectCity }) => {
           <WeatherForecastCard daily={daily} />
         </section>
         <section className="second flex flex-col gap-8 basis-full">
+          <span className="block bg-[#F2D168] text-black py-2 text-base lg:text-lg text-center font-bold">
+            Pronostico general del dia
+          </span>
           <div className="secondUp grow">
             <WeatherHorizontalCard
               key={0}
@@ -45,7 +48,6 @@ export const WeatherMain = ({ selectCity }) => {
               img={calendar}
               content={feels_like}
             />
-
             <WeatherHorizontalCard
               key={1}
               title={"Presion"}
@@ -76,6 +78,11 @@ export const WeatherMain = ({ selectCity }) => {
               img={calendar}
               content={temp_min}
             />
+          </div>
+          <div className="grow">
+            <span className="block bg-[#F2D168] text-black py-2 text-base lg:text-lg text-center font-bold">
+              Pronóstico del día por hora
+            </span>
           </div>
           <div className="secondDown grow">
             {hourly.map(({ dt, temp }) => (

@@ -3,14 +3,19 @@ import { getDay, getHour } from "../helpers/dates";
 
 export const WeatherForecastCard = ({ daily }) => {
   return (
-    <div className="flex flex-col gap-y-4 bg-[var(--secondary-bg)] rounded-4 p-6 py-8 rounded-2xl ">
-      <h3 className="text-lg lg:text-xl">Pronostico 5 dias</h3>
-      <div className="flex flex-col gap-4">
-        {daily.map(({ dt, temp }) => (
-          <ForecastItem key={dt} dt={dt} temp={temp} />
-        ))}
+    <>
+      <span className="block bg-[#F2D168] text-black py-2 text-base lg:text-lg text-center font-bold">
+        Pronóstico 5 días
+      </span>
+
+      <div className="flex flex-col gap-y-4 bg-[var(--secondary-bg)] rounded-4 p-6 py-8 rounded-2xl ">
+        <div className="flex flex-col gap-4">
+          {daily.map(({ dt, temp }) => (
+            <ForecastItem key={dt} dt={dt} temp={temp} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
