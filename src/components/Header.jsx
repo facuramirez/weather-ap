@@ -9,7 +9,7 @@ export const Header = ({
   handleSelectCity,
 }) => {
   return (
-    <header className="h-[5rem] flex flex-col lg:flex-row justify-between items-center px-8 [&>div]:basis-1/3">
+    <header className="sticky top-0 backdrop-blur-xl h-auto lg:h-[5rem] flex flex-col lg:flex-row justify-between items-center py-4 lg:py-0 px-8 [&>div]:basis-1/3">
       <div className="first flex flex-row gap-4 items-center basis-1/4">
         <figure>
           <img src={weather} alt="Weather" className="size-[4rem]" />
