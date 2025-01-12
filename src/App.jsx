@@ -3,7 +3,11 @@ import { Header } from "./components/Header";
 import { WeatherMain } from "./components/WeatherMain";
 import { useCity } from "./hooks/useCity";
 import { useLocation } from "./hooks/useLocation";
+import { Loader } from "./components/Loader";
 import { Footer } from "./components/Footer";
+import { ripples } from "ldrs";
+
+ripples.register();
 
 function App() {
   const { value, setValue, handleChange, isLoading, data } = useLocation();
@@ -17,7 +21,7 @@ function App() {
   }, [selectCity]);
 
   return (
-    <div className="flex flex-col gap-y-4 min-h-dvh justify-between">
+    <div className="flex flex-col gap-y-2 lg:gap-y-4 min-h-dvh lg:justify-between">
       <Header
         value={value}
         handleChange={handleChange}
@@ -25,8 +29,14 @@ function App() {
         data={data}
         handleSelectCity={handleSelectCity}
       />
-      <WeatherMain selectCity={selectCity} />
-      <Footer />
+      {!selectCity.main.temp ? (
+        <Loader />
+      ) : (
+        <>
+          <WeatherMain selectCity={selectCity} />
+          <Footer />
+        </>
+      )}
     </div>
   );
 }

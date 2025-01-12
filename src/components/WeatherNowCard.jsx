@@ -1,3 +1,4 @@
+import temperature from "../assets/temperature.svg";
 import calendar from "../assets/calendar.svg";
 import location from "../assets/location.svg";
 import { obtenerFechaFormateada } from "../helpers/getDate";
@@ -8,9 +9,9 @@ export const WeatherNowCard = ({ temp, weather, name, country }) => {
       <h3 className="text-lg lg:text-xl">Ahora</h3>
       <div className="flex flex-col gap-4 border border-l-0 border-r-0 border-t-0 border-[grey] pb-4">
         <div className="flex flex-row items-center gap-6">
-          <span className="text-6xl lg:text-7xl">{temp}C</span>
-          <figure className="size-[4rem]">
-            <img src={calendar} alt="WeatherIcon" className="size-[100%]" />
+          <span className="text-4xl text-5xl lg:text-6xl">{temp}C</span>
+          <figure className="size-[3rem] lg:size-[4rem]">
+            <img src={temperature} alt="WeatherIcon" className="size-[100%]" />
           </figure>
         </div>
         <span className="self-start">{weather[0].description}</span>

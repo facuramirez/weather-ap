@@ -9,20 +9,20 @@ export const Header = ({
   handleSelectCity,
 }) => {
   return (
-    <header className="sticky top-0 backdrop-blur-xl h-auto lg:h-[5rem] flex flex-col lg:flex-row justify-between items-center py-4 lg:py-0 px-8 [&>div]:basis-1/3">
+    <header className="sticky top-0 backdrop-blur-xl h-auto lg:h-[5rem] flex flex-col lg:flex-row justify-between items-center py-4 lg:py-0 px-4 lg:px-8 [&>div]:basis-1/3">
       <div className="first flex flex-row gap-4 items-center basis-1/4">
         <figure>
           <img src={weather} alt="Weather" className="size-[4rem]" />
         </figure>
         <span className="text-xl lg:text-2xl">Weather App</span>
       </div>
-      <div className="second basis-1/2">
-        <div className="relative flex flex-col items-center justify-center w-fit mx-auto">
+      <div className="second basis-1/2 w-[90%] md:w-[50%] lg:w-auto">
+        <div className="relative flex flex-col items-center justify-center w-full md:w-full lg:w-fit mx-auto">
           <div className="overflow-hidden flex focus-within:rounded-none w-full">
             <input
               id="input-search"
               type="text"
-              className="input-search pl-4 py-2 outline-none bg-[var(--secondary-bg)] transition-all w-[100%] w-[90%] lg:w-[22rem]"
+              className="input-search pl-4 py-2 outline-none bg-[var(--secondary-bg)] transition-all w-[100%] lg:w-[22rem]"
               placeholder="Buscar ciudad..."
               onChange={handleChange}
               vavlue={value}

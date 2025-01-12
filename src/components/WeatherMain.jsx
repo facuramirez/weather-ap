@@ -5,15 +5,9 @@ import {
 } from "./WeatherGeneralCard";
 import { WeatherNowCard } from "./WeatherNowCard";
 import calendar from "../assets/calendar.svg";
-import { ripples } from "ldrs";
-import { Loader } from "./Loader";
 import "../scss/WeatherMain.scss";
 
-ripples.register();
-
 export const WeatherMain = ({ selectCity }) => {
-  ripples.register();
-
   const {
     name,
     daily,
@@ -22,8 +16,6 @@ export const WeatherMain = ({ selectCity }) => {
     sys: { country },
     weather,
   } = selectCity;
-
-  if (!temp) return <Loader />;
 
   return (
     <main className="main w-[100%] md:w-[min(40rem,100%)] xl:w-[min(120rem,100%)] mx-auto mt-2">
@@ -39,18 +31,18 @@ export const WeatherMain = ({ selectCity }) => {
         </section>
         <section className="second flex flex-col gap-8 basis-full">
           <span className="block bg-[#F2D168] text-black py-2 text-base lg:text-lg text-center font-bold">
-            Pronostico general del dia
+            Pronóstico general del día
           </span>
           <div className="secondUp grow">
             <WeatherHorizontalCard
               key={0}
-              title={"Sensacion termica"}
+              title={"Sensación termica"}
               img={calendar}
               content={feels_like}
             />
             <WeatherHorizontalCard
               key={1}
-              title={"Presion"}
+              title={"Presión"}
               img={calendar}
               content={pressure}
             />
@@ -68,13 +60,13 @@ export const WeatherMain = ({ selectCity }) => {
             />
             <WeatherHorizontalCard
               key={4}
-              title={"Temperatura Maxima"}
+              title={"Temperatura Máxima"}
               img={calendar}
               content={temp_max}
             />
             <WeatherHorizontalCard
               key={5}
-              title={"Temperatura Minima"}
+              title={"Temperatura Mínima"}
               img={calendar}
               content={temp_min}
             />

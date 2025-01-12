@@ -3,15 +3,15 @@ import temperature from "../assets/temperature.svg";
 import pressure from "../assets/pressure.svg";
 import humidity from "../assets/humidity.svg";
 
-export const WeatherHorizontalCard = ({ title, img, content }) => {
+export const WeatherHorizontalCard = ({ title, content }) => {
   const mappedImg = [
-    "Sensacion termica",
+    "Sensación termica",
     "Temperatura",
-    "Temperatura Maxima",
-    "Temperatura Minima",
+    "Temperatura Máxima",
+    "Temperatura Mínima",
   ].includes(title)
     ? temperature
-    : title === "Presion"
+    : title === "Presión"
     ? pressure
     : humidity;
   return (
@@ -24,10 +24,10 @@ export const WeatherHorizontalCard = ({ title, img, content }) => {
         <span>
           {content}{" "}
           {[
-            "Sensacion termica",
+            "Sensación termica",
             "Temperatura",
-            "Temperatura Maxima",
-            "Temperatura Minima",
+            "Temperatura Máxima",
+            "Temperatura Mínima",
           ].includes(title) && "C"}
         </span>
       </div>
@@ -39,7 +39,7 @@ export const WeatherVerticalCard = ({ dt, temp }) => {
   return (
     <div className="flex flex-col items-center justify-center gap-y-8 p-6 bg-[var(--secondary-bg)] rounded-2xl ">
       <span className="text-lg lg:text-xl">{getHour(dt)}</span>
-      <figure className="size-[5rem]">
+      <figure className="size-[4rem] lg:size-[5rem]">
         <img src={temperature} alt={dt} />
       </figure>
       <span className="text-2xl lg:text-3xl">{temp} C</span>
