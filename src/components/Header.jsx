@@ -41,7 +41,7 @@ export const Header = ({
             </button>
           </div>
           {value && (
-            <div className="absolute flex flex-col gap-y-2 top-full left-0 px-4 py-2 w-full border bg-white [&>*]:text-black">
+            <div className="absolute flex flex-col gap-y-2 top-full left-0 px-4 py-2 w-full bg-white [&>*]:text-black">
               {isLoading ? (
                 <span>Buscando...</span>
               ) : data.length > 0 ? (

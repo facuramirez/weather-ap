@@ -26,21 +26,19 @@ export const useLocation = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        if (debouncedValue) {
-          const result = await getLatAndLong({ city: value });
-          setData(result);
-        } else {
-          setData([]);
-        }
+        const result = await getLatAndLong({ city: value });
+        setData(result);
       } catch (error) {
+        console.log(error);
         setData([]);
       } finally {
         setIsLoading(false);
       }
     };
 
-    getData();
-  }, [debouncedValue]);
+    if (debouncedValue) getData();
+    else setData([]);
+  }, [debouncedValue, value]);
 
   return { value, setValue, handleChange, isLoading, data };
 };
