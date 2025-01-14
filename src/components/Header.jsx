@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import weather from "../assets/weather.svg";
 import locationBlack from "../assets/locationBlack.svg";
 
@@ -21,11 +22,12 @@ export const Header = ({
           <div className="overflow-hidden flex focus-within:rounded-none w-full">
             <input
               id="input-search"
+              autoComplete="off"
               type="text"
               className="input-search pl-4 py-2 outline-none bg-[var(--secondary-bg)] transition-all w-[100%] lg:w-[22rem]"
               placeholder="Buscar ciudad..."
               onChange={handleChange}
-              vavlue={value}
+              value={value}
             />
             <button className="flex items-center justify-center px-4 bg-[var(--secondary-bg)]">
               <svg
